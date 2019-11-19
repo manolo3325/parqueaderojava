@@ -1,0 +1,321 @@
+/*!
+ * Materialize v1.0.0 (http://materializecss.com)
+ * Copyright 2014-2017 Materialize
+ * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
+ */
+
+.backgroundcuenta{
+     background-image:  url("../img/menu.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    
+}
+
+.backgroundsuscripcion{
+    background-image:  url("../img/suscripcion.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+}
+.backgroundindex{
+    background-image:  url("../img/backgraund.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.backgroundlogin{
+    background-image:  url("../img/login.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.backgroundindex{
+    background-image:  url("../img/backgraund.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.backgroundbienvenida{
+    background-image:  url("../img/menu2.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.backgroundpanelcontrol{
+    background-image:  url("../img/backgraund.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.boton{
+    padding: 5px 10px;
+    border-radius: 8px;
+    margin: 30px 30px 1px 1px; 
+    font-family: 'Fredoka One', cursive;
+}
+
+.boton2{
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-family: 'Fredoka One', cursive;
+}
+
+
+.boton3{
+    padding: 5px 25px;
+    border-radius: 10px;
+    font-family: 'Fredoka One', cursive;
+}
+
+.boton4{
+    padding: 20px 40px 0px 25px;
+    text-align: center;
+    font-family: 'Fredoka One', cursive;
+}
+
+
+
+.tipo1{
+    background: transparent;
+    color: #FF5859;
+    border: 2px solid;
+    border-color: #FF5859;   
+    transition: all ease .3s;
+}
+
+.tipo1:hover{
+    background: #FF5859;
+    border-color: #FF5859;
+    color: white;
+
+}
+
+.tipo2{
+    color: white;
+    background: #8E3390;
+    border: 2px solid;
+    border-color: #8E3390;  
+    transition: all ease .3s;
+}
+
+.tipo2:hover{
+    color: white;
+    background: transparent;
+    color: #9B3187;
+    border: 2px solid;
+    border-color: #9B3187;   
+}
+
+.tipo3{
+    border-bottom: none;    
+    color: white;
+    background: #D3572D;
+    border: 2px solid;
+    border-color: #D3572D;  
+    transition: all ease .3s;
+
+
+}
+
+.tipo3:hover{
+    color: white;
+    background: transparent;
+    color: #9B3187;
+    border: 2px solid;
+    border-color: #9B3187;   
+}
+
+
+.tipo4{
+    color: white;
+    background: transparent;
+    transition: all ease .3s;
+
+}
+
+.tipo4:hover{
+    color: white;
+    background: transparent;
+    color: white;
+    border-bottom: 2px solid white;
+}
+
+
+
+.content-btn{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.title{
+    color: #29476B;
+    font-size: 40px;
+    margin: 0px;
+    font-family: 'Fredoka One', cursive;  
+}
+
+.texto1{
+    color: #D3572D;
+    font-size: 30px;
+    margin: 15px;
+    font-family: 'Fredoka One', cursive; 
+
+}
+
+.texto2{
+    color: #29476B;
+    font-size: 30px;
+    margin: 15px;
+    font-family: 'Fredoka One', cursive;  
+}
+
+.texto3{
+    color: white;
+    font-size: 25px;
+    margin: 15px;
+    font-family: 'Fredoka One', cursive;  
+}
+
+.texto4{
+    color: #29476B;
+    font-size: 30px;
+    margin: 15px;
+    font-family: 'Fredoka One', cursive;  
+}
+
+
+
+.underline{
+    text-decoration: underline;
+    text-decoration: 10px; 
+}
+
+.logosize{
+    width: 450px;  
+}
+
+.logosize2{
+    width: 200px;  
+    margin: 10px;
+}
+
+.logosize3{
+    width: 150px;  
+    margin: 10px;
+}
+
+.logo {
+    min-height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logocentrar{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.centrar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login{
+    border: 1px solid red;
+    display: flex;
+    align-content: center;
+}
+
+.divloginrow{
+    display:flex;
+    flex-direction: row;
+    align-self: stretch;
+}
+
+.divlogincolumn{
+    display:flex;
+    flex-direction: column;
+    align-self: stretch;
+}
+
+.alto{
+    min-height: 95vh;
+}
+
+.flexrow{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+.flexcenter{
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+}
+
+.flexright{
+    display: felx;
+    flex-direction: row-reverse;
+
+}
+
+.flexleft{
+    display: felx;
+    flex-direction: row;
+
+}
+
+.menubanner{
+    background-color: #29476B;
+    border-radius: 0px 0px 0px 10px;
+}
+.borderojo{
+    border: 2px solid red;
+}
+
+
+.targetaSuscripcion1{
+    height: 300px;
+    width: 150px;
+    background-color: rgba(255, 255, 255, 0.4);;
+    border-radius: 8px;
+    margin: 10px; 
+    font-size: 100px;
+    font-family: 'Fredoka One', cursive;
+    transition: all ease .3s;
+}
+
+.targetaSuscripcion1:hover{
+   height: 310px;
+    width: 160px;
+    background-color: rgba(255, 255, 255, 0.9);;
+    border-radius: 8px;
+    margin: 10px; 
+    font-family: 'Fredoka One', cursive;
+}
+
+.targetaSuscripcion2{
+    height: 380px;
+    width: 150px;
+    background-color: rgba(255, 255, 255, 0.4);;
+    border-radius: 8px;
+    margin: 10px; 
+    font-family: 'Fredoka One', cursive;
+     transition: all ease .3s;
+}
+
+.targetaSuscripcion2:hover{
+   height: 390px;
+    width: 160px;
+    background-color: rgba(255, 255, 255, 0.9);;
+    border-radius: 8px;
+    margin: 10px; 
+    font-family: 'Fredoka One', cursive;
+}
+
+
+
+

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="ObjetosEditDlg" widgetVar="ObjetosEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditObjetosTitle}">
+            <h:form id="ObjetosEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{objetosController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditObjetosLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{objetosController.selected.id}" title="#{bundle.EditObjetosTitle_id}" required="true" requiredMessage="#{bundle.EditObjetosRequiredMessage_id}"/>
+                        <p:outputLabel value="#{bundle.EditObjetosLabel_nombre}" for="nombre" />
+                        <p:inputText id="nombre" value="#{objetosController.selected.nombre}" title="#{bundle.EditObjetosTitle_nombre}" required="true" requiredMessage="#{bundle.EditObjetosRequiredMessage_nombre}"/>
+                        <p:outputLabel value="#{bundle.EditObjetosLabel_descripcion}" for="descripcion" />
+                        <p:inputText id="descripcion" value="#{objetosController.selected.descripcion}" title="#{bundle.EditObjetosTitle_descripcion}" required="true" requiredMessage="#{bundle.EditObjetosRequiredMessage_descripcion}"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{objetosController.update}" value="#{bundle.Save}" update="display,:ObjetosListForm:datalist,:growl" oncomplete="handleSubmit(args, 'ObjetosEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="ObjetosEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="PlazoViewDlg" widgetVar="PlazoViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewPlazoTitle}">
+            <h:form id="PlazoViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{plazoController.selected != null}">
+                        <h:outputText value="#{bundle.ViewPlazoLabel_id}"/>
+                        <h:outputText value="#{plazoController.selected.id}" title="#{bundle.ViewPlazoTitle_id}"/>
+                        <h:outputText value="#{bundle.ViewPlazoLabel_tiempo}"/>
+                        <h:outputText value="#{plazoController.selected.tiempo}" title="#{bundle.ViewPlazoTitle_tiempo}">
+                            <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewPlazoLabel_descripcion}"/>
+                        <h:outputText value="#{plazoController.selected.descripcion}" title="#{bundle.ViewPlazoTitle_descripcion}"/>
+                        <h:outputText value="#{bundle.ViewPlazoLabel_valor}"/>
+                        <h:outputText value="#{plazoController.selected.valor}" title="#{bundle.ViewPlazoTitle_valor}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="PlazoViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

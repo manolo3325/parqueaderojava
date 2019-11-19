@@ -1,0 +1,94 @@
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <h:outputStylesheet name="css/jsfcrud.css"/>
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+        <link type="text/css" rel="stylesheet" href="css/style.css"  media="screen,projection"/>
+        <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet"/>
+
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    </h:head>
+
+    <h:body class="backgroundlogin">
+        <!--JavaScript at end of body for optimized loading-->
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+
+        <h:form>
+            <p:growl id="gpErrores" showDetail="true"/>
+            <div class="row alto " >
+                <div class="col s7 push-s5 alto  " >
+
+                    <div class="row alto centrar ">
+                        <div>
+                            
+                            
+                            
+                            <div class="flexrow  ">
+                                <div class="  ">
+                                    <h:link class="texto1 underline " outcome="login" value="Iniciar Sesión"/>
+                                </div>
+                                <div class="">
+                                     <h:link class="texto2 " outcome="registar" value="registrar"/>
+                                </div>
+                            </div>
+
+
+                            <div class="flexcenter">
+                                <div class=" ">
+                                    <div class="center">
+                                        <div class="input-field ">
+                                            <p:outputLabel value="Usuario:" for="text_user"/>
+                                            <p:inputText id="text_user" type="text" value="#{loginController.nombreUsuario}" required="true"/>
+
+                                        </div>
+                                        <div class="input-field">
+                                            <p:outputLabel value="Contraseña:" for="text_pass"/>
+                                            <p:password id="text_pass" value="#{loginController.password}" required="true"/>
+                                        </div>
+                                        <div class="flexcenter">
+                                            <p:commandButton value="Ingresar"  update="@form" class="boton3 tipo3" action="#{loginController.autenticarUsuario()}"/>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+
+
+        </h:form>
+
+
+
+
+    </h:body>
+
+</html>

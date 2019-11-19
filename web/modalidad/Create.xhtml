@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="ModalidadCreateDlg" widgetVar="ModalidadCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateModalidadTitle}">
+            <h:form id="ModalidadCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{modalidadController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateModalidadLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{modalidadController.selected.id}" title="#{bundle.CreateModalidadTitle_id}" required="true" requiredMessage="#{bundle.CreateModalidadRequiredMessage_id}"/>
+                        <p:outputLabel value="#{bundle.CreateModalidadLabel_nombre}" for="nombre" />
+                        <p:inputText id="nombre" value="#{modalidadController.selected.nombre}" title="#{bundle.CreateModalidadTitle_nombre}" required="true" requiredMessage="#{bundle.CreateModalidadRequiredMessage_nombre}"/>
+                        <p:outputLabel value="#{bundle.CreateModalidadLabel_estado}" for="estado" />
+                        <p:selectBooleanCheckbox id="estado" value="#{modalidadController.selected.estado}" required="true" requiredMessage="#{bundle.EditModalidadRequiredMessage_estado}"/>
+                        <p:outputLabel value="#{bundle.CreateModalidadLabel_idPlazo}" for="idPlazo" />
+                        <p:inputText id="idPlazo" value="#{modalidadController.selected.idPlazo}" title="#{bundle.CreateModalidadTitle_idPlazo}" required="true" requiredMessage="#{bundle.CreateModalidadRequiredMessage_idPlazo}"/>
+                        <p:outputLabel value="#{bundle.CreateModalidadLabel_fechaCorte}" for="fechaCorte" />
+                        <p:calendar id="fechaCorte" pattern="MM/dd/yyyy" value="#{modalidadController.selected.fechaCorte}" title="#{bundle.EditModalidadTitle_fechaCorte}" required="true" requiredMessage="#{bundle.EditModalidadRequiredMessage_fechaCorte}" showOn="button"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{modalidadController.create}" value="#{bundle.Save}" update="display,:ModalidadListForm:datalist,:growl" oncomplete="handleSubmit(args,'ModalidadCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="ModalidadCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

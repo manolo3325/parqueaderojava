@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="RegistroCreateDlg" widgetVar="RegistroCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateRegistroTitle}">
+            <h:form id="RegistroCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{registroController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateRegistroLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{registroController.selected.id}" title="#{bundle.CreateRegistroTitle_id}" required="true" requiredMessage="#{bundle.CreateRegistroRequiredMessage_id}"/>
+                        <p:outputLabel value="#{bundle.CreateRegistroLabel_fechaEntrada}" for="fechaEntrada" />
+                        <p:calendar id="fechaEntrada" pattern="MM/dd/yyyy" value="#{registroController.selected.fechaEntrada}" title="#{bundle.EditRegistroTitle_fechaEntrada}" required="true" requiredMessage="#{bundle.EditRegistroRequiredMessage_fechaEntrada}" showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateRegistroLabel_placaVehiculos}" for="placaVehiculos" />
+                        <p:inputText id="placaVehiculos" value="#{registroController.selected.placaVehiculos}" title="#{bundle.CreateRegistroTitle_placaVehiculos}" required="true" requiredMessage="#{bundle.CreateRegistroRequiredMessage_placaVehiculos}"/>
+                        <p:outputLabel value="#{bundle.CreateRegistroLabel_horaEntrada}" for="horaEntrada" />
+                        <p:calendar id="horaEntrada" pattern="HH:mm:ss" value="#{registroController.selected.horaEntrada}" title="#{bundle.EditRegistroTitle_horaEntrada}" required="true" requiredMessage="#{bundle.EditRegistroRequiredMessage_horaEntrada}" showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateRegistroLabel_horaSalida}" for="horaSalida" />
+                        <p:calendar id="horaSalida" pattern="HH:mm:ss" value="#{registroController.selected.horaSalida}" title="#{bundle.EditRegistroTitle_horaSalida}" required="true" requiredMessage="#{bundle.EditRegistroRequiredMessage_horaSalida}" showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateRegistroLabel_valor}" for="valor" />
+                        <p:inputText id="valor" value="#{registroController.selected.valor}" title="#{bundle.CreateRegistroTitle_valor}" required="true" requiredMessage="#{bundle.CreateRegistroRequiredMessage_valor}"/>
+                        <p:outputLabel value="#{bundle.CreateRegistroLabel_descripcion}" for="descripcion" />
+                        <p:inputText id="descripcion" value="#{registroController.selected.descripcion}" title="#{bundle.CreateRegistroTitle_descripcion}" required="true" requiredMessage="#{bundle.CreateRegistroRequiredMessage_descripcion}"/>
+                        <p:outputLabel value="#{bundle.CreateRegistroLabel_idUsuario}" for="idUsuario" />
+                        <p:inputText id="idUsuario" value="#{registroController.selected.idUsuario}" title="#{bundle.CreateRegistroTitle_idUsuario}" required="true" requiredMessage="#{bundle.CreateRegistroRequiredMessage_idUsuario}"/>
+                        <p:outputLabel value="#{bundle.CreateRegistroLabel_idObjetos}" for="idObjetos" />
+                        <p:inputText id="idObjetos" value="#{registroController.selected.idObjetos}" title="#{bundle.CreateRegistroTitle_idObjetos}" required="true" requiredMessage="#{bundle.CreateRegistroRequiredMessage_idObjetos}"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{registroController.create}" value="#{bundle.Save}" update="display,:RegistroListForm:datalist,:growl" oncomplete="handleSubmit(args,'RegistroCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="RegistroCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
